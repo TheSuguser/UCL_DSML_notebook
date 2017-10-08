@@ -3,6 +3,7 @@
 * The courses including
   * Supervosed Learning
   * Statistical Natural Language Processing
+  
   etc.
 * The notes will be updated every week or maybe every day. Depends on the weather and the traffic in London LOL
 * I wish you will enjoy them.
