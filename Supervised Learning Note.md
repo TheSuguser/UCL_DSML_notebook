@@ -55,7 +55,7 @@ $$
 $$
 Thus in martix notation **empirical**(经验主义的) **mean (sqaure) error** of the linear predictor $\hat{y}=\mathbf{w\cdot x}$ on the data sequence $\mathcal{S}$ is
 
-  
+
 $$
 \varepsilon_{emp}(\mathcal{S},\mathbf{w}) = \frac{1}{m}\sum^m_{i=1}(y_i-\hat{y_i})^2
 \\=\frac{1}{m} \sum^m_{i=1}(y_i-\hat{y_i})^2 \\= \sum_{i=1}^m(y_i-\mathbf{w\cdot x})^2\\= \frac{1}{m} \sum^m_{i=1}(y_i-\hat{y_i})^2\\ = \sum_{i=1}^m(y_i-\sum^n_{j=1}w_jx_{i,j})^2 \\= \frac{1}{m}\mathbf{(Xw -y)^\top(Xw-y)}
@@ -190,4 +190,12 @@ $$
   * Estimate $P$ and then use Bayes rule...
 
 ### Model selection
+
+
+
+
+
+# Week 2: Kernels and Regularization(正则化)  
+
+## Feature Maps
 
