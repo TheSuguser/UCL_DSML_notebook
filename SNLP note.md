@@ -108,3 +108,30 @@ $$
         * Generative Models (and unsupervised generative models)
         * Globally Normalized Conditional Log-Linear Models  
 
+
+## Language Model
+
+Language models calculate the probability to see a given sequence of words, as defined through a tokenization algorithm, in a given language or sub-language/domain/genre.
+
+A language model is a stochastic process that models the probability $p(w_1,….,w_d)$ of observing sequences of words $w_1,…,w_d$ . We can, without loss of generality, decompose (分解) the probability of such sequences into
+$$
+p(w_1,...,w_d) = p(w_1)\prod_{i=2}^d p(w_i|w1,...,w_{i-1})
+$$
+This means that a language model can be defined by how it models the conditinal probability  $p(w_i|w1,...,w_{i-1})$ of seeing a word $w_i$ after having seen the *history* of previous words $w_1,…,w_{i-1}$.
+
+### N-gram Language Models
+
+The most common type of equivalence class relies on truncating(缩短) histories $w_1,…,w_{i-1}$ to length $n-1$:
+$$
+p(w_i|w1,...,w_{i-1}) = p(w_i|w_{i-n},...,w_{i-1})
+$$
+That is, the probability of a word only depends on the last $n-1$ previous words. 
+
+### A Uniform Baseline(基线，底线) LM
+
+**Unigram models**
+
+
+
+
+
