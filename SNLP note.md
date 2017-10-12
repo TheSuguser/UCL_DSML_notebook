@@ -129,9 +129,13 @@ That is, the probability of a word only depends on the last $n-1$ previous words
 
 ### A Uniform Baseline(基线，底线) LM
 
-**Unigram models**
-
-
-
+**Unigram models** are the simplest 1-gram language models. That is, they model the conditinal probability of word using the prior probability of seeing that word:
+$$
+p(w_i|w1,...,w_{i-1})=p(w_i)
+$$
+To setup dataset and as baseline for more complex language models, we first introduce the simplest instantiation (实例) of a unigram model: a uniform language model which assigns the same prior probability to each word. That is given a vocabulary(词汇表) of words V, the uniform LM is defined as:
+$$
+p(w_i|w_1,...,w_{i-1})=\frac{1}{|V|}
+$$
 
 
