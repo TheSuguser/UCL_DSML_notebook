@@ -193,9 +193,115 @@ $$
 
 
 
+## Kernals and Regularization
+
+### Future Maps
+
+#### Definition
+
+* A feature map is simply a function that maps the "inputs" into a new space.
+* Thus, the origin method is now nonlinear in original "inputs" but linear in the "mapped inputs".
+
+#### Linear interpolation (插值)
+
+A problem is well-posed, if
+
+* a solution exists
+* the solution is unique
+* the solution depends continuously on the data
+
+Learning problems are in general ill-posed, usually because of (2).
+
+**Regularization theory** provides a general framework to solve ill-posed problems.
+
+### Ridge Regression
+
+Given a set of $k$ hypothesis classes $\{\mathcal{H}_r\}_r\in \mathbb{N}_k$ we can choose an appropriate hypothesis class with **cros-validation** 
+
+**Regularization**: An alternative(选择) compatible(兼容) with linear regression is to choos a single "complex" hypothesisi class and then modify the error function by adding a "complexity" term which penaltizes complex function.
+
+Cross-validation may still be needed to set the regularization parameter and other parameters defining the complexity term.
+
+We minimized the **regularized (penalized)** empirical error
+$$
+\varepsilon _{\mbox{emp}_\lambda}(\mathbf{w}) := \sum_{i=1}^m(y_i -\mathbf{w}^\top \mathbf{x}_i )^2 + \lambda \sum_{l=1}^n w_l^2\equiv (\mathbf{y-Xw})^\top\mathbf{(y-Xw)}+\lambda\mathbf{w^\top w}
+$$
+The **postive** parameter $\lambda$ defines a trade-off (折衷) between the error on the data and the norm of the vector $\mathbf{w}$ (**degree of regularization**)
+
+Setting $\nabla \varepsilon _{\mbox{emp}_\lambda}(\mathbf{w})=0$ (**details shown in slides** check your ipad)
+
+It can be shown that the regularized solution can be written as
+$$
+\mathbf{w} = \sum_{i=1}^{m}\alpha_i\mathbf{x}_i  \rightarrow f(\mathbf{x}) = \sum_{i=1}^m \alpha_i \mathbf{x}_i^\top\mathbf{x}
+$$
+where the vector of parameters $\mathbf{\alpha} = (\alpha_1,…,\alpha_m)^\top$ is given by
+$$
+\mathbf{\alpha} = (\mathbf{XX^\top}) + \lambda\mathbf{I}_m)^{-1}\mathbf{y}
+$$
+We can $f(\mathbf{x})=\mathbf{w}^\top \mathbf{x}$ the **primal form** and  $f(\mathbf{x}) = \sum_{i=1}^m \alpha_i \mathbf{x}_i^\top\mathbf{x}$ the **dual form** .
+
+The **dual form** is computationally convenient when $n>m$ . 
+
+* Training time:
+
+  Solving for $\mathbf{w}$ in primal form requires $O(mn^2+n^3)$ operations while solving for $\alpha$ in the dual form requires $O(nm^2+m^3)$ . If $m\ll n$, it is more efficient to use the dual representation. 
+
+* Test time:
+
+  Computing $f(\mathbf{x})$ on a test vector $\mathbf{x}$ in the primal form requires $O(n)$ operations while the dual form requires $O(mn)$ operations.
+
+### Basis Functions (Explicit(显性) Feature Maps)
+
+By a **feature map** we mean a fuction $\mathbf{\phi}$: $\mathbb{R}^n\rightarrow\mathbb{R}^N$
+$$
+\mathbf{\phi}(\mathbf{x}) = (\phi_1(\mathbf{x}),...,\phi_N(\mathbf{x}))^\top, \mathbf{x}\in\mathbb{R}
+$$
+Vector $\mathbf{\phi(x)}$ is called the **feature vector** and the space $\{\mathbf{\phi(x)}\}:\mathbf{x}\in \mathbb{R}^n$ the feature space
+
+The non-linear regression function has the primal representation
+$$
+f(\mathbf{x}) = \sum_{j=1}^Nw_j\phi_j(\mathbf{x})
+$$
+More generally for second order correlations if $\mathbf{x}\in \mathbb{R}^n$ we have
+$$
+\mathbf{\phi(x)}:= (\mathbf{x},x_1x_1,x1_x2,...,x1_xn,x_2x_2,x_2x_3,...,x_2x_n,...,x_nx_n)^\top
+$$
+i.e., $\phi:\mathbb{R}^n\rightarrow \mathbb{R}^{\frac{n^2+3n}{2}}$
+
+### Kernal Functions (Implicit(隐性) Feature Maps)
+
+Given a feature map $\phi$ we define its associated kernel function
+
+$K: \mathbb{R}^n \times \mathbb{R}^n\rightarrow\mathbb{R}$ as
+$$
+K(\mathbf{x,t}) = \langle\mathbf{\phi(x),\phi(t)}\rangle, \mathbf{x,t}\in\mathbb{R}^n
+$$
+
+#### Positive Semidefinite(半定) Kernel
+
+* **Definition**:
+
+  A function $K$: $\mathbb{R}^n\times\mathbb{R}^n\rightarrow \mathbb{R}$ is **positive semidefinite** if it is symmetric and the matrix ($K(\mathbf{x}_i,\mathbf{x}_j):i,j=1,…,k$) is positive semidefinite for every $k\in\mathbb{N}$ and every $mathbf{x_1,…,x_k}\in\mathbb{R}^2 $ 
+
+  $K$ is positive semidefinite if and only if
+  $$
+  K(\mathbf{x,t}) = \langle\phi(\mathbf{x}),\mathbf{\phi(t)}\rangle, \mathbf{x,t}\in \mathbb{R}^n
+  $$
+  for some feature map $\phi:\mathbb{R}^n\rightarrow \mathcal{W}$ and a Hilbert space $\mathcal{W}$
+
+  ​
+
+  ​
 
 
-# Week 2: Kernels and Regularization(正则化)  
 
-## Feature Maps
+
+
+
+
+
+
+
+
+
 
