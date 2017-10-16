@@ -289,18 +289,37 @@ $$
   $$
   for some feature map $\phi:\mathbb{R}^n\rightarrow \mathcal{W}$ and a Hilbert space $\mathcal{W}$
 
-  ​
-
-  ​
 
 
+####Two Example Kernels
 
+* Polynomial Kernerls
 
+  if $p$ : $\mathbb{R}\rightarrow\mathbb{R}$ is a polynomial with nonnegative coefficients then $K(\mathbf{x,t}) = p(\mathbf{x^\top t}),\mathbf{x,t}\in \mathbb{R}^n$ is postive semidefinite kernel. For example if $a \geq 0$ 
 
+  *  $K(\mathbf{x,t}) = (\mathbf{x^\top t})^r$
+  * $K(\mathbf{x,t}) = (a+\mathbf{x^\top t})^r$
+  * $K(\mathbf{x,t}) = \sum _{i=0}^d \frac{a^i}{i!}(\mathbf{x^\top t})^i$
 
+  are each positive semidefinite kernels.
 
+* Gaussian Kernel
 
+  An important example of a "radial" kernel is the Gaussian kernel
+  $$
+  K(\mathbf{x,t}) = \mbox{exp}(-\beta||\mathbf{x-t}||^2), \beta>0,\mathbf{x,t}\in \mathbb{R}^n
+  $$
+  note: any corresponding feature map $\phi(.)$ is $\infty$-dimentional.
 
+#### Kernel Construction
+
+If $K_1,K_2$ are kernels, $a\geq 0$ , $A$ is a symmetric positive semi-definite matrix, $K$ a kernel on $\mathbb{R}^n$ and $\phi: \mathbb{R^n\rightarrow R^N}$ then the following functions are positive semidefinite kernel on $\mathbb{R^n}$
+
+1. $\mathbf{x}^\top A \mathbf{t}$
+2. $K_1(\mathbf{x,t})+K_2 (\mathbf{x,t})$
+3. $aK_1(\mathbf{x,t})$
+4. $K_1(\mathbf{x,t})K_2(\mathbf{x,t})$
+5. $K(\phi(\mathbf{x}),\phi(\mathbf{t}))$
 
 
 
