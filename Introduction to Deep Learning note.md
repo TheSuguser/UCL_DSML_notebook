@@ -61,3 +61,12 @@
 Everything with > 1 hidden layer is **"deep"**
 
 For a single training exmaple $()$
+
+
+
+## Week3: Effciency under embedded and mobile 
+
+### Background
+
+**Run anywhere on anything**
+

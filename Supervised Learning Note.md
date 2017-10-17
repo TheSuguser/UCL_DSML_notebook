@@ -323,4 +323,32 @@ If $K_1,K_2$ are kernels, $a\geq 0$ , $A$ is a symmetric positive semi-definite 
 
 
 
+## Online Learning
+
+### Learning with Expert Advice
+
+Goal: Design master algorithms with "small loss".
+
+####Halving(二分) Algorithm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
