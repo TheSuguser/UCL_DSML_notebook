@@ -34,5 +34,12 @@
 
   ​
 
-## Chapter 2
+## Chapter 2: Hypothesis testing and confidence intervals
+
+### Hypothesis tests and p-values
+
+* Statistical hypothesis testing involves a trade-off between two drawbacks
+  * False positives: rejecting $H_0$ when it is true
+  * False negatives: not rejecting $H_0$ when it is true
+  * **Note** that not rejecting $H_0$ is not the same as accepting $H_0$
 
