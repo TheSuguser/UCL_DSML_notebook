@@ -298,8 +298,8 @@ $$
   if $p$ : $\mathbb{R}\rightarrow\mathbb{R}$ is a polynomial with nonnegative coefficients then $K(\mathbf{x,t}) = p(\mathbf{x^\top t}),\mathbf{x,t}\in \mathbb{R}^n$ is postive semidefinite kernel. For example if $a \geq 0$ 
 
   *  $K(\mathbf{x,t}) = (\mathbf{x^\top t})^r$
-  * $K(\mathbf{x,t}) = (a+\mathbf{x^\top t})^r$
-  * $K(\mathbf{x,t}) = \sum _{i=0}^d \frac{a^i}{i!}(\mathbf{x^\top t})^i$
+  *  $K(\mathbf{x,t}) = (a+\mathbf{x^\top t})^r$
+  *  $K(\mathbf{x,t}) = \sum _{i=0}^d \frac{a^i}{i!}(\mathbf{x^\top t})^i$
 
   are each positive semidefinite kernels.
 
@@ -330,6 +330,26 @@ If $K_1,K_2$ are kernels, $a\geq 0$ , $A$ is a symmetric positive semi-definite 
 Goal: Design master algorithms with "small loss".
 
 ####Halving(二分) Algorithm
+
+## Week 5 Support Vector Machine
+
+### Optimal separating hyperplane
+
+
+
+
+
+### Soft margin separation
+
+
+
+
+
+### Support vector machine
+
+
+
+### Connection to regularization
 
 
 
